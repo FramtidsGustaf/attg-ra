@@ -7,23 +7,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let rmvButton = document.createElement("input");
     rmvButton.setAttribute("type", "button");
     rmvButton.setAttribute("value", "Ta bort");
-    let doneButton = document.createElement("input");
-    doneButton.setAttribute("type", "button");
-    doneButton.setAttribute("value", "Färdig");
+    let doneCheckbox = document.createElement("input");
+    doneCheckbox.setAttribute("type", "checkbox");
 
     let theList = document.getElementById("theList");
     newToDo.textContent = toDoMessage.value;
     theList.appendChild(newToDo);
     newToDo.appendChild(rmvButton);
-    newToDo.appendChild(doneButton);
+    newToDo.appendChild(doneCheckbox);
 
-    doneButton.addEventListener("click", function (event) {
-      if (newToDo.className === "done") {
+    doneCheckbox.addEventListener("click", function (event) {
+      if (!doneCheckbox.checked) {
         newToDo.classList.remove("done");
-        doneButton.setAttribute("value", "färdig");
       } else {
         newToDo.setAttribute("class", "done");
-        doneButton.setAttribute("value", "ofärdig");
       }
     });
 
