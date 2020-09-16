@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let theList = document.getElementById("theList");
     newToDo.textContent = toDoMessage.value;
     theList.appendChild(newToDo);
-    newToDo.appendChild(rmvButton);
     newToDo.appendChild(doneCheckbox);
+    newToDo.appendChild(rmvButton);
 
     doneCheckbox.addEventListener("click", function (event) {
       if (!doneCheckbox.checked) {
